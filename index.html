@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FastBite</title>
+    <link href="src/css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <main id="home"></main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('src/Html/welcome_page/home.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('home').innerHTML = data;
+                });
+
+        });
+    </script>
+</body>
+
+</html>
