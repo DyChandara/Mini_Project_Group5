@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+ /* .gradient-bg {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8e53 100%);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff4757 100%);
+        } */
