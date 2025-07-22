@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastBite - Our Menu</title>
+    <title>Menu Nham To - Premium Fast Food Restaurant in Phnom Penh | Fresh & Delicious Since 2019</title>
+    <meta name="description" content="Discover Nham To's story - Phnom Penh's favorite fast food destination since 2019. Fresh ingredients, bold flavors, and quick service that brings families together. Visit us today!">
+    <meta name="keywords" content="Nham To, fast food Phnom Penh, best burger Cambodia, quick service restaurant, fresh fast food, family restaurant Phnom Penh, affordable dining">
+    <meta property="og:title" content="Menu Nham To - Premium Fast Food Restaurant">
+    <meta property="og:description" content="From humble beginnings to Phnom Penh's beloved fast food destination. Learn about our commitment to fresh ingredients and bold flavors.">
+    <meta property="og:type" content="website">
     <link href="../../css/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -19,6 +24,67 @@
         .banner-image.fade-in {
             opacity: 1;
         }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+        /* Cart overlay styles */
+        
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        
+        .cart-overlay.open {
+            right: 0;
+        }
+        
+        .cart-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .cart-backdrop.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* Success modal styles */
+        
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .success-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 
@@ -27,28 +93,87 @@
     <!-- Navbar -->
     <nav id="navbar"></nav>
 
+    <!-- Cart Backdrop -->
+    <div id="cart-backdrop" class="cart-backdrop"></div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay">
+        <div class="h-full flex flex-col">
+            <!-- Cart Header -->
+            <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+                <h2 class="text-xl font-bold text-gray-800">Your Cart</h2>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Cart Items -->
+            <div id="cart-items-list" class="flex-1 overflow-y-auto p-4">
+                <div class="text-center text-gray-500 py-8">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+
+            <!-- Cart Footer -->
+            <div id="cart-footer" class="p-4 border-t border-gray-200 hidden">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center text-lg font-bold">
+                        <span>Total:</span>
+                        <span class="text-orange-500">$<span id="cart-total">0.00</span></span>
+                    </div>
+                </div>
+                <button id="checkout-btn" class="w-full gradient-bg text-white py-3 px-4 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="success-modal">
+        <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+            <div class="mb-4">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Checkout Successful!</h3>
+                <p class="text-gray-600">Your order has been placed successfully. Thank you for choosing FastBite!</p>
+            </div>
+            <button id="close-success-modal" class="gradient-bg text-white py-2 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
     <!-- Rotating Banner -->
     <section class="relative h-64 bg-gray-900 overflow-hidden">
         <div id="banner-container" class="relative w-full h-full">
-            <div class="banner-image absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center">
-                <div class="text-center text-white">
-                    <h1 class="text-5xl font-bold mb-4">Our Menu</h1>
-                    <p class="text-xl">Delicious food options with fresh local ingredients</p>
-                </div>
-            </div>
-            <div class="banner-image absolute inset-0 bg-gradient-to-r from-orange-600 to-red-700 flex items-center justify-center opacity-0">
-                <div class="text-center text-white">
-                    <h1 class="text-5xl font-bold mb-4">Fresh & Fast</h1>
-                    <p class="text-xl">Quality ingredients, lightning-fast service</p>
-                </div>
-            </div>
-            <div class="banner-image absolute inset-0 bg-gradient-to-r from-yellow-600 to-orange-700 flex items-center justify-center opacity-0">
-                <div class="text-center text-white">
-                    <h1 class="text-5xl font-bold mb-4">Tasty Burgers</h1>
-                    <p class="text-xl">Handcrafted burgers made with love</p>
-                </div>
-            </div>
+            <!-- Banner slides will be generated by JavaScript -->
         </div>
+
+        <!-- Banner Controls -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2" id="banner-dots">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button id="banner-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-opacity">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        <button id="banner-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-opacity">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
     </section>
 
     <!-- Menu Section -->
@@ -56,23 +181,23 @@
         <!-- Search and Filter -->
         <div class="flex flex-col md:flex-row justify-between items-center mb-8">
             <div class="relative mb-4 md:mb-0">
-                <input type="text" placeholder="Search for food..." class="w-80 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                <input type="text" id="search-input" placeholder="Search for food..." class="w-80 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <span class="text-gray-400">
                         <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
                     </span>
                 </div>
             </div>
             <div class="flex items-center space-x-4">
                 <span class="text-sm text-gray-600">Filter by category:</span>
-                <div class="flex space-x-2">
-                    <button class="px-4 py-2 bg-red-600 text-white rounded-lg text-sm">All</button>
-                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300">Burgers</button>
-                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300">Pizza</button>
-                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300">Chicken</button>
-                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300">Salads</button>
+                <div class="flex space-x-2" id="filter-buttons">
+                    <button class="filter-btn px-4 py-2 bg-red-600 text-white rounded-lg text-sm" data-category="all">All</button>
+                    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300" data-category="burgers">Burgers</button>
+                    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300" data-category="pizza">Pizza</button>
+                    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300" data-category="chicken">Chicken</button>
+                    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300" data-category="salads">Salads</button>
                 </div>
             </div>
         </div>
@@ -87,7 +212,7 @@
     <footer id="footer"></footer>
 
     <!-- External JavaScript -->
-    <script src="../../js/menu.js" defer></script>
+    <script src="../../js/menu.js"></script>
 </body>
 
 </html>

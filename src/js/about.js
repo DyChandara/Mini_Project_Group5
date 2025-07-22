@@ -1,23 +1,38 @@
 // Team members data
 const teamMembers = [{
-        name: "Chef Marco Rodriguez",
+        name: "Teacher name",
+        role: "role",
+        image: "../../../image/nahm_to.jpg"
+    },
+    {
+        name: "Dy",
+        role: "Group Leader",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23e5e7eb'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='%236b7280' text-anchor='middle'%3EBradley H.%3C/text%3E%3C/svg%3E"
+    },
+    {
+        name: "Grey Jackson",
         role: "Head Chef",
-        image: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23d1d5db'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='%236b7280' text-anchor='middle'%3EGrey J.%3C/text%3E%3C/svg%3E"
     },
     {
-        name: "Lisa Chen",
-        role: "Kitchen Manager",
-        image: "https://images.unsplash.com/photo-1594736797933-d0401ba3a65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        name: "Antony Joseph",
+        role: "Owner",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f9fafb'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='%236b7280' text-anchor='middle'%3EAntony J.%3C/text%3E%3C/svg%3E"
     },
     {
-        name: "David Thompson",
-        role: "Operations Manager",
-        image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        name: "Maria Santos",
+        role: "Bread Specialist",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fef3c7'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='%236b7280' text-anchor='middle'%3EMaria S.%3C/text%3E%3C/svg%3E"
     },
     {
-        name: "Sarah Johnson",
-        role: "Customer Service Lead",
-        image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        name: "Tom Wilson",
+        role: "Assistant Baker",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fed7aa'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='%236b7280' text-anchor='middle'%3ETom W.%3C/text%3E%3C/svg%3E"
+    },
+    {
+        name: "Emma Davis",
+        role: "Decorator",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fde68a'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='%236b7280' text-anchor='middle'%3EEmma D.%3C/text%3E%3C/svg%3E"
     }
 ];
 
@@ -42,7 +57,7 @@ function renderTeam() {
     `).join('');
 }
 
-// Add new team member dynamically
+// Add new team member dynamically (function available but not used in UI)
 function addTeamMember(name, role, image) {
     teamMembers.push({ name, role, image });
     renderTeam();
@@ -50,15 +65,7 @@ function addTeamMember(name, role, image) {
 
 // DOM ready
 document.addEventListener('DOMContentLoaded', function() {
-    renderTeam(); // You forgot to call renderTeam() here originally
-
-    if (typeof renderMenuItems === 'function') {
-        renderMenuItems(); // Only call if this function exists
-    }
-
-    if (typeof rotateBanner === 'function') {
-        setInterval(rotateBanner, 15000);
-    }
+    renderTeam();
 
     // Load navbar
     fetch('../header_footer/navbar.html')
@@ -75,5 +82,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-// Example usage:
+// Example usage (for programmatic adding):
 // addTeamMember("John Doe", "Assistant Chef", "https://example.com/image.jpg");

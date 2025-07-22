@@ -1,14 +1,35 @@
 // contact.js
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you within 24 hours.');
+});
+
+// Add hover effects to contact cards
+document.querySelectorAll('.hover\\:shadow-md').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.classList.add('transform', 'scale-105', 'transition-transform', 'duration-200');
+    });
+    card.addEventListener('mouseleave', function() {
+        this.classList.remove('scale-105');
+    });
+});
+
+// Social media button interactions
+document.querySelectorAll('.fab').forEach(icon => {
+    icon.parentElement.addEventListener('click', function() {
+        const iconClass = icon.className;
+        let platform = '';
+        if (iconClass.includes('facebook')) platform = 'Facebook';
+        else if (iconClass.includes('whatsapp')) platform = 'WhatsApp';
+
+        alert(`Redirecting to ${platform}...`);
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     // Render dynamic menu items if needed
     if (typeof renderMenuItems === 'function') {
         renderMenuItems();
-    }
-
-    // Start banner rotation if the function exists
-    if (typeof rotateBanner === 'function') {
-        setInterval(rotateBanner, 15000); // every 15 seconds
     }
 
     // Load navbar
