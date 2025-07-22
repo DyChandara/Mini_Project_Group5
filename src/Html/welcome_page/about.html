@@ -10,8 +10,10 @@
     <meta property="og:title" content="About Nham To - Premium Fast Food Restaurant">
     <meta property="og:description" content="From humble beginnings to Phnom Penh's beloved fast food destination. Learn about our commitment to fresh ingredients and bold flavors.">
     <meta property="og:type" content="website">
+
     <link href="../../css/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         .hover-zoom {
             transition: transform 0.3s ease;
@@ -27,6 +29,42 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        .progress-bar {
+            transition: width 1s ease-out;
+        }
+        
+        .icon-container {
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            transition: all 0.3s ease;
+            border: 2px solid #fed7aa;
+        }
+        
+        .icon-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1200');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .section-gradient {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+        }
     </style>
 </head>
 
@@ -35,7 +73,7 @@
     <div id="navbar"></div>
 
     <!-- Hero Section -->
-    <section class="relative text-white py-20 overflow-hidden" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1200'); background-size: cover; background-position: center;">
+    <section class="hero-bg relative text-white py-20 overflow-hidden">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">About <span class="gradient-text">Nham To</span></h1>
             <p class="text-xl md:text-2xl opacity-95 drop-shadow-md max-w-3xl mx-auto leading-relaxed">
@@ -62,20 +100,26 @@
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-gray-800 text-lg">Customer Satisfaction</span>
+                                <span class="font-bold text-gray-800 text-lg">
+                                    <i class="fas fa-heart text-orange-500 mr-2"></i>
+                                    Customer Satisfaction
+                                </span>
                                 <span class="font-bold text-orange-600 text-xl">94%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full transition-all duration-1000 ease-out shadow-sm" style="width: 94%"></div>
+                                <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full progress-bar shadow-sm" style="width: 94%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-gray-800 text-lg">Fresh Daily Ingredients</span>
+                                <span class="font-bold text-gray-800 text-lg">
+                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
+                                    Fresh Daily Ingredients
+                                </span>
                                 <span class="font-bold text-orange-600 text-xl">89%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full transition-all duration-1000 ease-out shadow-sm" style="width: 89%"></div>
+                                <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full progress-bar shadow-sm" style="width: 89%"></div>
                             </div>
                         </div>
                     </div>
@@ -88,40 +132,40 @@
     </section>
 
     <!-- Our Values Section -->
-    <section class="py-16 bg-gradient-to-br from-gray-50 to-orange-50">
+    <section class="py-16 section-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">What Makes Nham To Different</h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">These aren't just words on a wall - they're the heart of everything we do</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bolt text-white text-3xl"></i>
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lightning Fast Service</h3>
-                    <p class="text-gray-600">Your order ready in 5 minutes or less - because your time matters</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Lightning Fast Service</h3>
+                    <p class="text-gray-600 text-sm">Your order ready in 5 minutes or less - because your time matters</p>
                 </div>
-                <div class="text-center bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-leaf text-white text-3xl"></i>
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fresh Never Frozen</h3>
-                    <p class="text-gray-600">Hand-cut fries, fresh-grilled patties, and crisp vegetables daily</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Fresh Never Frozen</h3>
+                    <p class="text-gray-600 text-sm">Hand-cut fries, fresh-grilled patties, and crisp vegetables daily</p>
                 </div>
-                <div class="text-center bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-dollar-sign text-white text-3xl"></i>
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Unbeatable Value</h3>
-                    <p class="text-gray-600">Premium quality at prices that won't break the bank</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Unbeatable Value</h3>
+                    <p class="text-gray-600 text-sm">Premium quality at prices that won't break the bank</p>
                 </div>
-                <div class="text-center bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-smile text-white text-3xl"></i>
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-smile text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Smiles Guaranteed</h3>
-                    <p class="text-gray-600">Friendly service that makes every visit feel like coming home</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Smiles Guaranteed</h3>
+                    <p class="text-gray-600 text-sm">Friendly service that makes every visit feel like coming home</p>
                 </div>
             </div>
         </div>
@@ -133,74 +177,90 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet the Nham To Family</h2>
                 <p class="text-gray-600 text-lg">The awesome people who make your food with pride every single day</p>
-                <!-- Toggle button to switch between team sets -->
-                <div class="mt-6">
-                    <button id="toggle-team" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg transition-colors font-semibold">
-                        Switch Team View
-                    </button>
-                </div>
             </div>
             <div id="team-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Team members -->
-                <div class="text-center bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                    <h4 class="font-bold text-gray-900 mb-2">Sophea Chen</h4>
-                    <p class="text-gray-600 text-sm">Head Chef</p>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/dy.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Dy Chandara
+                    </h4>
+                    <p class="text-gray-600 text-sm">Figma Designer and Video editor</p>
                 </div>
-                <div class="text-center bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                    <h4 class="font-bold text-gray-900 mb-2">Maya Nguyen</h4>
-                    <p class="text-gray-600 text-sm">Kitchen Manager</p>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/ty.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Tyy
+                    </h4>
+                    <p class="text-gray-600 text-sm">Developer and Figma Designer</p>
                 </div>
-                <div class="text-center bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                    <h4 class="font-bold text-gray-900 mb-2">David Kim</h4>
-                    <p class="text-gray-600 text-sm">Service Manager</p>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/riya.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Dy Riya
+                    </h4>
+                    <p class="text-gray-600 text-sm">Figma Designer and Video editor</p>
                 </div>
-                <div class="text-center bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                    <h4 class="font-bold text-gray-900 mb-2">Lisa Phan</h4>
-                    <p class="text-gray-600 text-sm">Customer Relations</p>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/chhari.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Oeurn SelaChhari
+                    </h4>
+                    <p class="text-gray-600 text-sm">Developer and Figma Designer</p>
+                </div>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/thay.png" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Saing Sengthay
+                    </h4>
+                    <p class="text-gray-600 text-sm">Figma Designer and Developer</p>
+                </div>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Phol Veasna
+                    </h4>
+                    <p class="text-gray-600 text-sm">Developer and Figma Designer</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Achievements Section -->
-    <section class="py-16 bg-gradient-to-br from-orange-50 to-yellow-50">
+    <section class="py-16 section-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Phnom Penh Loves Nham To</h2>
                 <p class="text-gray-600 text-lg">The numbers don't lie - we're doing something right!</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-trophy text-white text-3xl"></i>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
                     </div>
-                    <div class="text-2xl font-bold text-gray-900 mb-2">#1 Fast Food</div>
-                    <p class="text-gray-600">Voted Best Fast Food in Phnom Penh 2024</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">#1 Fast Food</div>
+                    <p class="text-gray-600 text-sm">Voted Best Fast Food in Phnom Penh 2024</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-star text-white text-3xl"></i>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-white text-2xl"></i>
                     </div>
-                    <div class="text-2xl font-bold text-gray-900 mb-2">4.8/5 Stars</div>
-                    <p class="text-gray-600">Average rating across all review platforms</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">4.8/5 Stars</div>
+                    <p class="text-gray-600 text-sm">Average rating across all review platforms</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-users text-white text-3xl"></i>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
                     </div>
-                    <div class="text-2xl font-bold text-gray-900 mb-2">50,000+</div>
-                    <p class="text-gray-600">Happy customers served and counting!</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">50,000+</div>
+                    <p class="text-gray-600 text-sm">Happy customers served and counting!</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-clock text-white text-3xl"></i>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
                     </div>
-                    <div class="text-2xl font-bold text-gray-900 mb-2">3.2 Min</div>
-                    <p class="text-gray-600">Average order preparation time</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">3.2 Min</div>
+                    <p class="text-gray-600 text-sm">Average order preparation time</p>
                 </div>
             </div>
         </div>
