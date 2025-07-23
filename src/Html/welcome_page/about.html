@@ -4,9 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastBite</title>
+    <title>About Nham To - Premium Fast Food Restaurant in Phnom Penh | Fresh & Delicious Since 2019</title>
+    <meta name="description" content="Discover Nham To's story - Phnom Penh's favorite fast food destination since 2019. Fresh ingredients, bold flavors, and quick service that brings families together. Visit us today!">
+    <meta name="keywords" content="Nham To, fast food Phnom Penh, best burger Cambodia, quick service restaurant, fresh fast food, family restaurant Phnom Penh, affordable dining">
+    <meta property="og:title" content="About Nham To - Premium Fast Food Restaurant">
+    <meta property="og:description" content="From humble beginnings to Phnom Penh's beloved fast food destination. Learn about our commitment to fresh ingredients and bold flavors.">
+    <meta property="og:type" content="website">
+
     <link href="../../css/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         .hover-zoom {
             transition: transform 0.3s ease;
@@ -15,22 +22,63 @@
         .hover-zoom:hover {
             transform: scale(1.05);
         }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #f97316, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-out;
+        }
+        
+        .icon-container {
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            transition: all 0.3s ease;
+            border: 2px solid #fed7aa;
+        }
+        
+        .icon-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1200');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .section-gradient {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+        }
     </style>
 </head>
 
 <body class="bg-white">
-    <!-- Navbar -->
-    <nav id="navbar"></nav>
+    <!-- Navbar placeholder -->
+    <div id="navbar"></div>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-red-500 to-orange-500 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">About FastBite</h1>
-                <p class="text-xl max-w-3xl mx-auto">
-                    Serving delicious, quality fast food since 2019. From our family to yours' family. We're committed to excellence in every bite.
-                </p>
-            </div>
+    <section class="hero-bg relative text-white py-20 overflow-hidden">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">About <span class="gradient-text">Nham To</span></h1>
+            <p class="text-xl md:text-2xl opacity-95 drop-shadow-md max-w-3xl mx-auto leading-relaxed">
+                Where fast meets fresh! Serving up Cambodia's most craveable fast food since 2019. From our kitchen to your table - every bite tells a story of quality, speed, and pure deliciousness.
+            </p>
         </div>
     </section>
 
@@ -39,59 +87,85 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-                    <p class="text-gray-600 mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">The Fast Food Revolution Started Here</h2>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        Back in 2019, we had a crazy idea - what if fast food could actually taste amazing? What if we used real ingredients, cooked everything fresh, and still got your order out lightning-fast?
                     </p>
-                    <p class="text-gray-600 mb-4">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        That's how Nham To was born. We're not just another burger joint - we're the place where busy Cambodians come when they want something quick, delicious, and satisfying. Whether you're grabbing lunch between meetings or treating the family to dinner, we've
+                        got you covered.
                     </p>
-                    <p class="text-gray-600">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                    </p>
+
+                    <!-- Stats -->
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-gray-800 text-lg">
+                                    <i class="fas fa-heart text-orange-500 mr-2"></i>
+                                    Customer Satisfaction
+                                </span>
+                                <span class="font-bold text-orange-600 text-xl">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full progress-bar shadow-sm" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-gray-800 text-lg">
+                                    <i class="fas fa-seedling text-green-500 mr-2"></i>
+                                    Fresh Daily Ingredients
+                                </span>
+                                <span class="font-bold text-orange-600 text-xl">89%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full progress-bar shadow-sm" style="width: 89%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="overflow-hidden rounded-lg">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Restaurant kitchen" class="w-full h-80 object-cover hover-zoom">
+                <div class="overflow-hidden rounded-xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&h=400&fit=crop" alt="Nham To kitchen staff preparing fresh fast food" class="w-full h-96 object-cover hover-zoom">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Values Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 section-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
-                <p class="text-gray-600">The principles that guide everything we do</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Makes Nham To Different</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">These aren't just words on a wall - they're the heart of everything we do</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Lightning Fast Service</h3>
+                    <p class="text-gray-600 text-sm">Your order ready in 5 minutes or less - because your time matters</p>
+                </div>
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-leaf text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Quality Ingredients</h3>
-                    <p class="text-gray-600">Only the finest, freshest ingredients make it into our menu</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Fresh Never Frozen</h3>
+                    <p class="text-gray-600 text-sm">Hand-cut fries, fresh-grilled patties, and crisp vegetables daily</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Service</h3>
-                    <p class="text-gray-600">Quick delivery without compromising quality</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Unbeatable Value</h3>
+                    <p class="text-gray-600 text-sm">Premium quality at prices that won't break the bank</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                <div class="text-center bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-smile text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Food Safety</h3>
-                    <p class="text-gray-600">Strict hygiene and safety protocols in all operations</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Customer First</h3>
-                    <p class="text-gray-600">Every decision is made with our customers' satisfaction in mind</p>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Smiles Guaranteed</h3>
+                    <p class="text-gray-600 text-sm">Friendly service that makes every visit feel like coming home</p>
                 </div>
             </div>
         </div>
@@ -100,94 +174,102 @@
     <!-- Meet Our Team Section -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-                <p class="text-gray-600">The talented people behind your favorite meals</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet the Nham To Family</h2>
+                <p class="text-gray-600 text-lg">The awesome people who make your food with pride every single day</p>
             </div>
             <div id="team-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Team members will be populated by JavaScript -->
+                <!-- Team members -->
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/dy.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Dy Chandara
+                    </h4>
+                    <p class="text-gray-600 text-sm">Figma Designer and Video editor</p>
+                </div>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/ty.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Tyy
+                    </h4>
+                    <p class="text-gray-600 text-sm">Developer and Figma Designer</p>
+                </div>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/riya.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Dy Riya
+                    </h4>
+                    <p class="text-gray-600 text-sm">Figma Designer and Video editor</p>
+                </div>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/chhari.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Oeurn SelaChhari
+                    </h4>
+                    <p class="text-gray-600 text-sm">Developer and Figma Designer</p>
+                </div>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/thay.png" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Saing Sengthay
+                    </h4>
+                    <p class="text-gray-600 text-sm">Figma Designer and Developer</p>
+                </div>
+                <div class="text-center bg-gray-50 rounded-xl p-6 card-hover">
+                    <img src="../../../image/veasna.png" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-orange-200">
+                    <h4 class="font-bold text-gray-900 mb-2">
+                        Phol Veasna
+                    </h4>
+                    <p class="text-gray-600 text-sm">Developer and Figma Designer</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Our Achievements Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 section-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Achievements</h2>
-                <p class="text-gray-600">Recognition and milestones we're proud of</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Phnom Penh Loves Nham To</h2>
+                <p class="text-gray-600 text-lg">The numbers don't lie - we're doing something right!</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-trophy text-white text-2xl"></i>
                     </div>
-                    <div class="text-lg font-bold text-gray-900 mb-2">Best Fast Food 2024</div>
-                    <p class="text-gray-600 text-sm">Winner by Local Food Association</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">#1 Fast Food</div>
+                    <p class="text-gray-600 text-sm">Voted Best Fast Food in Phnom Penh 2024</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-star text-white text-2xl"></i>
                     </div>
-                    <div class="text-lg font-bold text-gray-900 mb-2">5 Star Food Safety Rating</div>
-                    <p class="text-gray-600 text-sm">Certified by State Food Safety Board</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">4.8/5 Stars</div>
+                    <p class="text-gray-600 text-sm">Average rating across all review platforms</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-heart text-white text-2xl"></i>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
                     </div>
-                    <div class="text-lg font-bold text-gray-900 mb-2">50,000+ Happy Customers</div>
-                    <p class="text-gray-600 text-sm">Served Since We Opened</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">50,000+</div>
+                    <p class="text-gray-600 text-sm">Happy customers served and counting!</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="w-16 h-16 icon-container rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-clock text-white text-2xl"></i>
                     </div>
-                    <div class="text-lg font-bold text-gray-900 mb-2">24/7 Service</div>
-                    <p class="text-gray-600 text-sm">Round-the-clock availability</p>
+                    <div class="text-xl font-bold text-gray-900 mb-2">3.2 Min</div>
+                    <p class="text-gray-600 text-sm">Average order preparation time</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quality Standards Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Quality Standards</h2>
-                <p class="text-gray-600">How we ensure every ingredient is of the highest standard</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-seedling text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Fresh Ingredients</h3>
-                    <p class="text-gray-600">We source our ingredients from local farms and suppliers daily</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-snowflake text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Proper Storage</h3>
-                    <p class="text-gray-600">Temperature-controlled storage systems maintain freshness</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-fire text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Expert Preparation</h3>
-                    <p class="text-gray-600">Our skilled chefs prepare each meal with precision and care</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
 
-    <!-- Footer -->
-    <footer id="footer"></footer>
-
-    <!-- External JavaScript -->
-    <script src="../../js/about.js" defer></script>
+    <script src="../../js/about.js"></script>
 
 </body>
 

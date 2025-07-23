@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastBite Header</title>
+    <link href="../../css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="../../../image/nahm_to.jpg" alt="nham_to Logo" class="w-10 h-10 rounded-full mr-3 object-cover">
+                    <span class="text-2xl font-bold text-gray-800">Nham_Ot</span>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Cart -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative cursor-pointer" id="cart-icon" onclick="openCart()">
+                            <svg class="w-6 h-6 text-gray-600 hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 11-4 0v-6m4 0V9a2 2 0 10-4 0v4.01"></path>
+                                </svg>
+                            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" style="display: none;">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Login Button -->
+                    <a href="../Login/login.html" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                        Login
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden ml-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+                    <a href="home.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">Home</a>
+                    <a href="menu.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">Contact</a>
+                    <a href="../Login/login.html" class="bg-orange-500 hover:bg-orange-600 text-white block px-3 py-2 text-base font-medium rounded-lg mx-3 mt-2 text-center transition-colors">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cart functionality placeholder
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.getElementById('cart-count');
+
+        cartIcon.addEventListener('click', () => {
+            alert('Cart functionality coming soon!');
+        });
+    </script>
+</body>
+
+</html>
