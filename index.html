@@ -25,7 +25,61 @@
 
 <body class="bg-gray-50">
     <!-- Navbar -->
-    <nav id="navbar"></nav>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="./image/nahm_to.jpg" alt="nham_to Logo" class="w-10 h-10 rounded-full mr-3 object-cover">
+                    <span class="text-2xl font-bold text-gray-800">Nham_Ot</span>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="./index.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Home</a>
+                    <a href="./src/Html/welcome_page/menu.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Menu</a>
+                    <a href="./src/Html/welcome_page/about.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">About</a>
+                    <a href="./src/Html/welcome_page/contact.html" class="text-gray-700 hover:text-orange-500 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Cart -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative cursor-pointer" id="cart-icon" onclick="openCart()">
+                            <svg class="w-6 h-6 text-gray-600 hover:text-orange-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 11-4 0v-6m4 0V9a2 2 0 10-4 0v4.01"></path>
+                                </svg>
+                            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" style="display: none;">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Login Button -->
+                    <a href="./src/Html/Login/login.html" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                        Login
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden ml-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+                    <a href="./index.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">Home</a>
+                    <a href="./src/Html/welcome_page/menu.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">Menu</a>
+                    <a href="./src/Html/welcome_page/about.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">About</a>
+                    <a href="./src/Html/welcome_page/contact.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 text-base font-medium transition-colors">Contact</a>
+                    <a href="./src/Html/Login/login.html" class="bg-orange-500 hover:bg-orange-600 text-white block px-3 py-2 text-base font-medium rounded-lg mx-3 mt-2 text-center transition-colors">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Banner -->
     <section class="hero-bg text-white py-16">
@@ -133,9 +187,78 @@
     </div>
 
     <!-- Footer -->
-    <footer id="footer"></footer>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="  rounded-full flex items-center justify-center mr-3">
+                            <img src="./image/istad.png" alt="Logo" class="w-full h-12 object-cover" />
+                        </div>
+                        <span class="text-2xl font-bold">ISTAD</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Institute of Science and Technology Advanced Development
+                    </p>
+                </div>
 
-    <!-- External JavaScript -->
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class=" w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">
+                                <img src="./image/nahm_to.jpg" alt="Nham Ot Logo" class="w-full h-full object-cover rounded-full">
+                            </span>
+                        </div>
+                        <span class="text-2xl font-bold">Nham Ot</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Delicious food delivered fresh to your door. Quality ingredients, fast delivery.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg> 123 Food Street, Foodville, Cambodia
+                        </p>
+                        <p class="text-gray-400 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg> +855 12 345 678
+                        </p>
+                        <p class="text-gray-400 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg> info@fastbite.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 FastBite. All rights reserved. Developed by YourName</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="./src/home.js"></script>
 </body>
 
