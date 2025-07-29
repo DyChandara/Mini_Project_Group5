@@ -59,7 +59,7 @@ const customerReviews = [{
         name: "Sarah Johnson",
         rating: 5,
         review: "Amazing food quality and super fast delivery! The burgers are absolutely delicious.",
-        avatar: "https://images.unsplash.com/photo-1494790108755-2616b6d6b48c?w=50&h=50&fit=crop&crop=face",
+        avatar: " https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg ",
         date: "2 days ago"
     },
     {
